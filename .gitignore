@@ -1,4 +1,7 @@
 __pycache__/
 *.pyc
+*.log
 _private_*.csv
 make_microclusters.py
+finch/data/
+finch/finch_summary.txt

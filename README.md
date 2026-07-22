@@ -9,6 +9,7 @@ prediction of the next microcluster.
 
 - `data/microclusters.csv.gz` — microcluster-labelled marmoset call sequences.
 - `reproduce_reclustering.py` — predictive-state reclustering and model selection.
+- `finch/` — the second-species (Bengalese finch) pipeline.
 - `requirements.txt`, `LICENSE`.
 
 ## Data
@@ -42,6 +43,19 @@ discovered categories reach 3.099 nats at K=11.
 Cluster your acoustic features into microclusters (e.g. 64 k-means groups) and write a
 `data/microclusters.csv.gz` with the columns above (`sound_cluster` optional, `pnd`/`animal_id`
 optional). Then run `python reproduce_reclustering.py`.
+
+## Second species (Bengalese finch)
+
+`finch/` reproduces the finch analysis from the public BirdsongRecognition corpus
+(Koumura & Okanoya 2016, figshare 3470165):
+
+```
+python finch/run_all_finches.py       # downloads the corpus and writes finch/finch_results.csv
+python finch/finch_figures.py Bird5   # per-bird figures
+```
+
+The finch pipeline is the same method with a log-mel front-end. It downloads the corpus, forms
+microclusters, and reclusters them by predictive equivalence.
 
 ## Citation
 
