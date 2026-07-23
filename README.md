@@ -22,7 +22,6 @@ prediction of the next microcluster.
 | `order` | position of the unit within the recording |
 | `split` | `train` or `test` (split by recording) |
 | `animal_id` | individual identifier |
-| `pnd` | postnatal day |
 | `call_type` | expert label |
 | `micro` | microcluster label (0–63) |
 | `sound_cluster` | sound-only clustering label |
@@ -41,8 +40,8 @@ discovered categories reach 3.099 nats at K=11.
 ## Apply to your own data
 
 Cluster your acoustic features into microclusters (e.g. 64 k-means groups) and write a
-`data/microclusters.csv.gz` with the columns above (`sound_cluster` optional, `pnd`/`animal_id`
-optional). Then run `python reproduce_reclustering.py`.
+`data/microclusters.csv.gz` with the columns above (`sound_cluster` and `animal_id` optional).
+Then run `python reproduce_reclustering.py`.
 
 ## Second species (Bengalese finch)
 
